@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Omesuh - Portfolio</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <style>
+        /* Global tags */
+        :root{
+            --text-color: #1a1c20;
+            --link-color: #4a76ee;
+            --background-color: #eeeff1;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            /* max-width: 1400px; */
+        }
+        a{
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        /* Global tags end */
+
+        /* Navbar */
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 50px; */
+            height: 80px;
+            z-index: 999;
+            width: 100%;
+            position: fixed;
+            padding: 0 8vw;
+            background-color: var(--text-color);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            flex-direction: row;
+            padding-top: 0;
+        }
+
+        nav .left a{
+            color: var(--background-color);
+            font-size: 22px;
+            font-weight: 600;
+        }
+        nav .right a{
+            color: var(--background-color);
+            margin: 0 10px;
+        }
+        nav .right a:last-child{
+            color: var(--text-color);
+            /* background-color: var(--background-color); */
+            background: linear-gradient(to right, #cddc39, #4caf50);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        nav .right a:last-child:hover{
+        filter: brightness(1.1);
+        }
+        nav .right a span{
+            margin-left: 5px;
+        }
+        /* Navbar end */
+
+        /* Profile */
+        .profile-section{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            margin: 50px 0;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 100px;
+            margin-top: 0; /* closes space at navbar top */
+            padding-top: 100.5px;
+        }
+        .profile-section .text{
+            flex: 5;
+        }
+        .profile-section .text h2{
+            font-size: 45px;
+        }
+        .profile-section .text .links{
+            margin-top: 25px;
+        }
+        .profile-section .text .links a{
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid var(--link-color);
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: .1s;
+        }
+
+        .profile-section .text .links a:hover{
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+        }
+
+
+        .profile-section .headshot{
+            flex: 2;
+            display: flex;
+            justify-content: right;
+        }
+        .profile-section .headshot img{
+            width: 350px;
+            height: 380px;
+            border-radius: 50%;
+        }
+        /* Profile end */
+
+        /* Skills */
+        .skills-section{
+            padding: 0 50px;
+            margin-bottom: 100px;
+        }
+        .skills-section h2{
+            text-align: center;
+            font-size: 35px;
+        }
+        .skills-section .text{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .skills-section .cells{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .skills-section .cells .cell{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 1.5px solid #d3d3d3;
+            border-radius: 5px;
+            gap: 10px;
+        }
+        .skills-section .cells .cell img{
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+        .skills-section .cells .cell span{
+            font-size: 18px;
+        }
+        /* Skills end */
+
+
+        /* Project */
+        .projects-section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .projects-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .projects-section span {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .projects-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            margin: 0.8rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .project-links .btn {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--text-color);
+            border-radius: 25px;
+            color: #000;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .project-links .btn:hover {
+            background-color: var(--text-color);
+            color: #fff;
+        }
+        /* Project end */
+
+        /* Contact */
+        .contact-section{
+            padding: 0 50px;
+            margin-bottom: 100px;
+        }
+        .contact-section h2{
+            font-size: 35px;
+        }
+        .contact-section .group{
+            display: flex;
+            gap: 50px;
+        }
+        .contact-section .group .text{
+            flex: 3;
+            margin-top: 20px;
+        }
+        .contact-section .group form{
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-section .group form input,
+        .contact-section .group form textarea{
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid var(--link-color);
+            background-color: transparent;
+            padding: 10px;
+            margin-bottom: 15px;
+            outline: none;
+            resize: none;
+        }
+        .contact-section .group form button{
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background-color: var(--link-color);
+            border: none;
+            height: 50px;
+            cursor: pointer;
+            transition: .1s;
+        }
+        .contact-section .group form button:hover{
+            filter: brightness(.9);
+        }
+        /* Contact end */
+
+        /* Footer */
+        .footer {
+        background-color: var(--text-color);
+        color: #fff;
+        padding: 50px 20px;
+        width: 100%;
+        }
+
+        .footer-container {
+        /* max-width: 1000px; */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* width: 50%; */
+        margin-left: 50px;
+        }
+
+        .footer-logo h2 {
+        font-size: 24px;
+        margin: 10px 0 5px;
+        }
+
+        .footer-logo p {
+        margin: 4px 0;
+        }
+
+        .footer-logo .tagline {
+        font-size: 14px;
+        color: #d3d3d3;
+        max-width: 400px;
+        }
+
+        .logo-img {
+        width: 50px;
+        margin-bottom: 10px;
+        }
+
+        .footer-socials {
+        margin: 20px 0;
+        }
+
+        .footer-socials a {
+        display: inline-block;
+        /* margin: 0 10px; */
+        margin-right: 15px;
+        font-size: 20px;
+        color: #fff;
+        background-color: #2b2b2c;
+        padding: 10px;
+        border: none;
+        /* border-radius: 50%; */
+        transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+        background-color: #4caf50;
+        color: #fff;
+        }
+
+        .footer-newsletter h3 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        }
+
+        .footer-newsletter p {
+        font-size: 14px;
+        color: #ccc;
+        }
+
+        .newsletter-form {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 400px;
+        }
+
+        .newsletter-form input {
+        padding: 12px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        }
+
+        .newsletter-form button {
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(to right, #cddc39, #4caf50);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+        filter: brightness(1.1);
+        }
+
+        .footer-bottom {
+        margin-top: 40px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: #bbb;
+        margin-bottom: 0;
+        }
+
+        .footer-bottom .signature {
+        margin-top: 5px;
+        font-weight: 500;
+        color: #fff;
+        }
+        /* Footer end */
+
+
+        /* Media queries */
+        /* iPad */
+        @media(max-width: 850px){
+            /* Profile section */
+            .profile-section .text h2{
+                font-size: 35px;
+            }
+            /* Profile section end */
+        }
+
+        @media(max-width: 740px){
+            /* Profile section */
+            .profile-section{
+                flex-direction: column-reverse;
+            }
+            .profile-section .headshot img{
+                width: 300px;
+            }
+            /* Profile section end */
+
+            /* Contact */
+            .contact-section .group{
+                flex-direction: column;
+            }
+        }
+        /* Contact end */
+    
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+                margin-left: 20px;
+
+            }
+
+            .footer-logo, .footer-newsletter {
+                flex: 1;
+            }
+
+            .footer-socials {
+                flex: 1;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                flex-direction: row;
+            }
+
+            .newsletter-form input {
+                flex: 1;
+            }
+
+            .newsletter-form button {
+                width: 150px;
+            }
+        }
+        /* iPad end */
+
+        /* Mobile phone */
+        @media(max-width: 600px){
+            /* Navbar */
+            nav{
+                padding: 0 20px;
+            }
+            nav .right a{
+                font-size: 20px;
+            }
+            nav .right a:last-child{
+                color: var(--background-color);
+                /* color: linear-gradient(to right, #cddc39, #4caf50); */
+                background: none;
+                padding: 0;
+            }
+            nav .right a span{
+                display: none;
+            }
+            /* Navbar end */
+
+            /* Profile section */
+            .profile-section{
+                padding: 0 20px;
+                padding-top: 100.5px;
+            }
+            .profile-section .text h2{
+                font-size: 30px;
+            }
+            .profile-section .headshot img{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+        
+            /* Profile section end */
+
+            /* Skills */
+            .skills-section{
+                padding: 0 20px;
+            }
+            .skills-section h2{
+                text-align: left;
+            }
+            .skills-section .text{
+                margin-top: 20px;
+                text-align: left;
+            }
+            .skills-section .cells{
+                justify-content: left;
+            }
+            .skills-section .cells .cell{
+                width: 100%;
+            }
+            .skills-section .cells .cell span{
+                font-size: 16px;
+            }
+            /* Skills end */
+
+            /* Contact */
+            .contact-section{
+                padding: 0 20px;
+            }
+            /* Contact end */
+
+            /* Footer */
+            .footer{
+                text-align: left;
+            }
+            .footer-container {
+                flex-direction: column;
+                /* justify-content: space-between; */
+                align-items: flex-start;
+                text-align: left;
+                margin-left: 16px;
+            }
+            .footer .footer-socials{
+                align-items: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-form input,
+            .newsletter-form button{
+                width: 100%;
+            }
+            /* Footer end */
+        }
+        /* Mobile phone end */
+        /* Media queries end */
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="left">
+            <a href="/">Daniel Omesuh</a>
+        </div>
+        <div class="right">
+            <a href="http://github.com" target="_blank" rel="noopener
+            noreferrer">
+            <i class="fab fa-github fa-lg"></i>
+                <span>Github</span>
+            </a>
+
+            <a href="http://github.com" target="_blank" rel="noopener
+            noreferrer">
+                <i class="fab fa-linkedin fa-lg"></i>
+                <span>Linkedin</span>
+            </a>
+
+            <a href="mailto:dannyomesuh@gmail.com">
+                <i class="fas fa-envelope fa-lg"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Profile section -->
+    <section class="profile-section">
+        <div class="text">
+            <h2>Hi, I'm Daniel👋</h2>
+            <p>
+                I specialize in creating visually compelling, high-performance websites and robust web
+                applications tailored to meet diverse business needs. My goal is to help every brand I
+                work with stand out in today's competitive digital world.<br><br>
+
+                Beyond web development, I've also delivered high-quality graphic design solutions to a range
+                of premium brands, boosting their visual storytelling and marketing effectiveness. From
+                seamless e-commerce platforms to dynamic business websites. This portfolio reflects my
+                commitment to innovation, excellence, and measurable impact in both web and graphic design.
+            </p>
+            <div class="links">
+                <a href="#projects">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="#contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="resume.pdf" download class="btn">
+                    <i class="fas fa-download"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="headshot">
+            <img src="imgProfile.png" alt="Daniel's profile pic">
+        </div>
+    </section>
+    <!-- Profile section end -->
+
+    <!-- Skills section -->
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="text">
+            I specialize in designing, building, and maintaining dynamic web applications that deliver
+            exceptional user experiences. My expertise spans front-end and back-end development, allowing
+            me to craft seamless and engaging digital solutions. I am proficient in a range of technologies,
+            including:
+        </div>
+        <div class="cells">
+            <div class="cell">
+                <img src="imgHtml.png" alt="html logo">
+                <span>HTML</span>
+            </div>
+            <div class="cell">
+                <img src="imgCss.png" alt="css logo">
+                <span>CSS</span>
+            </div>
+            <div class="cell">
+                <img src="imgJs.png" alt="js logo">
+                <span>JavaScript</span>
+            </div>
+            <div class="cell">
+                <img src="imgNode.png" alt="node logo">
+                <span>Node.js</span>
+            </div>
+            <div class="cell">
+                <img src="imgReact.png" alt="react logo">
+                <span>React.js</span>
+            </div>
+            <div class="cell">
+                <img src="imgFigma.png" alt="react logo">
+                <span>Figma</span>
+            </div>
+            <!-- <div class="cell">
+                <img src="imgPhp.png" alt="react logo">
+                <span>PHP</span>
+            </div> -->
+            <div class="cell">
+                <img src="imgMysql.png" alt="react logo">
+                <span>MySQL</span>
+            </div>
+        </div>
+    </section>
+    <!-- Skills section end -->
+
+    <!-- Projects section -->
+    <section class="projects-section" id="projects">
+        <h2>Browse My Recent <span>Projects</span></h2>
+        <div class="projects-container">
+            <!-- Project One -->
+            <div class="project-card">
+                <img src="imgProSam.png" alt="Project One">
+                <h3>ProSam Music Website</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="https://danicon04.github.io/ProSam/" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+        
+
+            <!-- Project Two -->
+            <div class="project-card">
+                <img src="imgWetnwavy.png" alt="Project Two">
+                <h3>Wet n' Wavy Party</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="#" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+    
+            <!-- Project Three -->
+            <div class="project-card">
+                <img src="imgRccg.png" alt="Project Three">
+                <h3>RCCG Church Site</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="#" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+
+            <!-- Project Four -->
+            <div class="project-card">
+                <img src="imgRccg.png" alt="Project Three">
+                <h3>RCCG Church Site</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="#" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+
+            <!-- Project Five -->
+            <div class="project-card">
+                <img src="imgRccg.png" alt="Project Three">
+                <h3>RCCG Church Site</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="#" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+
+            <!-- Project Six -->
+            <div class="project-card">
+                <img src="imgRccg.png" alt="Project Three">
+                <h3>RCCG Church Site</h3>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn">Github</a>
+                    <a href="#" target="_blank" class="btn">View Site</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects section end -->
+
+    <!-- Contact section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <div class="group">
+            <div class="text">
+                I'm open to remote or on-site opportunities in web development and UI/UX
+                design. If you're looking for a passionate developer who values clean
+                code and user-focused design, let's connect.
+            </div>
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" name="" id="name">
+
+                <label for="email">Email</label>
+                <input type="email" name="" id="email">
+
+                <label for="message">Message</label>
+                <textarea name="" id="message" cols="30" rows="10"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- Contact section end -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="footer-container">
+        <div class="footer-logo">
+            <h2>Daniel Omesuh</h2>
+            <p>Web Developer And Designer</p>
+            <p class="tagline">Bringing ideas to reality, Providing top-notch web development and design services.</p>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news and offers.</p>
+            <form action="#" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+        <p>&copy; 2025 Daniel Omesuh. All rights reserved.</p>
+        <p class="signature">Dependable. Skilled. Yours</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+</html>

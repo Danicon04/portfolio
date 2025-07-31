@@ -12,5 +12,6 @@ git push origin master
 
 
 ## Git after changes code
+git add .
 git commit -m "portfolio"
 git push origin master

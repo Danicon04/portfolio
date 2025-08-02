@@ -746,8 +746,8 @@
                 <img src="imgWetnwavy.png" alt="Project Two">
                 <h3>Wet n' Wavy Party</h3>
                 <div class="project-links">
-                    <a href="#" target="_blank" class="btn">Github</a>
-                    <a href="#" target="_blank" class="btn">View Site</a>
+                    <a href="https://github.com/Danicon04/wetnwavy.git" target="_blank" class="btn">Github</a>
+                    <a href="https://danicon04.github.io/wetnwavy/" target="_blank" class="btn">View Site</a>
                 </div>
             </div>
     
@@ -827,15 +827,20 @@
         </div>
 
         <div class="footer-bottom">
-        <p>&copy; 2025 Daniel Omesuh. All rights reserved.</p>
+        <p>&copy; <span id="years"></span> Daniel Omesuh. All rights reserved.</p>
         <p class="signature">Dependable. Skilled. Yours</p>
         </div>
     </footer>
     <!-- Footer End -->
 
 
-    <!-- AJAX Form Submission -->
+
     <script>
+        // Footer Date section
+        let dates = new Date();
+        document.getElementById('years').innerHTML = dates.getFullYear();
+
+        <!-- AJAX Form Submission -->
         const form = document.getElementById('contactForm');
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
@@ -896,7 +901,7 @@
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (emailPattern.test(email)) {
-                    alert("Submission successful");
+                    alert("Subscription successful!");
                     form.reset(); // Optionally reset the form
                 } else {
                     alert("Please enter a valid email address");
